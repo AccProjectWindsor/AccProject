@@ -94,6 +94,7 @@ public class CreateWordDic {
 			}
 		}
 		String[] str1 = sb.toString().split("\\s+");
+		br.close();
 		return str1;
 	}
 
