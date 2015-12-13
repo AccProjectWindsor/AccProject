@@ -50,11 +50,31 @@ public class FileHelper {
 		os.close();
 	}
 
+	public static String readToBuffer(StringBuilder strBuilder,File file) throws IOException {
+		strBuilder = new StringBuilder();
+		String line; // Content of each line
+		FileInputStream fis = new FileInputStream(file);
+		BufferedReader reader = new BufferedReader(new InputStreamReader(fis));
+		line = reader.readLine(); // read the first line
+		while (line != null) { // false if reach the end of file
+			if (line.length() != 0) {
+				strBuilder.append(line); // store the content to buffer
+				strBuilder.append('\n'); // add end of line symbol
+			}
+			line = reader.readLine(); // read next line
+		}
+
+		reader.close();
+		fis.close();
+
+		return strBuilder.toString();
+	}
+	
 	/**
 	 * Read file to buffer
 	 */
-	public static String readToBuffer(StringBuilder strBuilder, File file) throws IOException {
-		strBuilder.setLength(0);
+	public static String readToBuffer(File file) throws IOException {
+		StringBuilder strBuilder = new StringBuilder();
 		String line; // Content of each line
 		FileInputStream fis = new FileInputStream(file);
 		BufferedReader reader = new BufferedReader(new InputStreamReader(fis));

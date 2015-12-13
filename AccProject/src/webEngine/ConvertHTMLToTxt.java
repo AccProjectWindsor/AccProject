@@ -41,7 +41,7 @@ public class ConvertHTMLToTxt {
 		StringBuilder sb = new StringBuilder();
 		for (File file : fileList) {
 			org.jsoup.nodes.Document doc = Jsoup.parse(FileHelper.readToBuffer(sb, file));
-			FileHelper.writeFile(doc.text(), TARGET + file.getName().replace(".htm", ".txt"));
+			FileHelper.writeFile(doc.text().replaceAll("<", "").replaceAll(">", ""), TARGET + file.getName().replace(".htm", ".txt"));
 		}
 		
 	}

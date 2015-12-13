@@ -1,5 +1,6 @@
 package webEngine;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -16,7 +17,7 @@ public class SearchTrie {
 	private SearchTrie() {
 		createTST();
 	}
-	
+
 	public static SearchTrie getInstance() {
 		return searchTrie;
 	}
@@ -39,6 +40,14 @@ public class SearchTrie {
 		}
 	}
 
+	public static Iterable<String> prefixSearch(String str) {
+		return searchTST.prefixMatch(str);
+	}
+
+	public static Iterable<String> prefixSearchLm(String str, int count) {
+		return searchTST.prefixMatchLm(str, count);
+	}
+
 	public static TST<Integer> getTST() {
 		return searchTST;
 	}
@@ -48,6 +57,10 @@ public class SearchTrie {
 			System.out.println(key);
 			System.out.println(searchTST.get(key));
 		}
+	}
+
+	public static void main(String[] args) throws IOException {
+		TRIEDEBUG();
 	}
 
 }

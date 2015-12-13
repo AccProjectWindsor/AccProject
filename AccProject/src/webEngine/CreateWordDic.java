@@ -20,7 +20,7 @@ public class CreateWordDic {
 
 	private final static String spliter = " ";
 	private final Integer COUNTER = 1;
-	private final static Path DIR = Paths.get("./data/test");
+	private final static Path DIR = Paths.get("./data/Text");
 	private final static Map<String, List<PageInfo>> wordDictionary = new HashMap<>();
 	private final static CreateWordDic createWordDic = new CreateWordDic();
 

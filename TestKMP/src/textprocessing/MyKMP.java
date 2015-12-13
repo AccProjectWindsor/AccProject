@@ -83,23 +83,22 @@ public class MyKMP {
 		}
 		if (j == M)
 			return i - M; // found
-		return N; // not found
+		return -1; // not found
 	}
 
 	public List<Integer> searchAll(final String txt) {
 
 		List<Integer> resultList = new ArrayList<Integer>();
-		String targetString = txt;
+		StringBuilder targetString = new StringBuilder(txt);
 		int sumPos = 0;
 
 		while (true) {
-			int txtLengh = targetString.length();
-			int pos = search(targetString);
-			if (pos == txtLengh) {
+			int pos = search(targetString.toString());
+			if (pos < 0) {
 				break;
 			}
 			resultList.add(pos + sumPos);
-			targetString = targetString.substring(pos + pat.length(), txtLengh);
+			targetString.delete(0, pos + pat.length());
 			sumPos += pos + pat.length();
 		}
 

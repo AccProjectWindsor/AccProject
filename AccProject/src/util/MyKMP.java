@@ -1,5 +1,9 @@
 package util;
 
+
+import java.util.ArrayList;
+import java.util.List;
+
 /***************************************************************
  *
  * Compilation: javac KMP.java Execution: java KMP pattern text
@@ -24,7 +28,7 @@ package util;
  *
  ***************************************************************/
 
-public class KMP {
+public class MyKMP {
 	private final int R; // the radix
 	private int[][] dfa; // the KMP automoton
 
@@ -32,8 +36,8 @@ public class KMP {
 	private String pat; // or the pattern string
 
 	// create the DFA from a String
-	public KMP(String pat) {
-		this.R = 256;
+	public MyKMP(String pat) {
+		this.R = 100000;
 		this.pat = pat;
 
 		// build DFA from pattern
@@ -49,7 +53,7 @@ public class KMP {
 	}
 
 	// create the DFA from a character array over R-character alphabet
-	public KMP(char[] pattern, int R) {
+	public MyKMP(char[] pattern, int R) {
 		this.R = R;
 		this.pattern = new char[pattern.length];
 		for (int j = 0; j < pattern.length; j++)
@@ -79,8 +83,28 @@ public class KMP {
 		}
 		if (j == M)
 			return i - M; // found
-		return N; // not found
+		return -1; // not found
 	}
+
+	public List<Integer> searchAll(final String txt, int count) {
+
+		List<Integer> resultList = new ArrayList<Integer>();
+		StringBuilder targetString = new StringBuilder(txt);
+		int sumPos = 0;
+
+		while (resultList.size() < count) {
+			int pos = search(targetString.toString());
+			if (pos < 0) {
+				break;
+			}
+			resultList.add(pos + sumPos);
+			targetString.delete(0, pos + pat.length());
+			sumPos += pos + pat.length();
+		}
+
+		return resultList;
+	}
+	
 
 	// return offset of first match; N if no match
 	public int search(char[] text) {
@@ -97,37 +121,4 @@ public class KMP {
 		return N; // not found
 	}
 
-	// test client
-	public static void main(String[] args) {
-		// String pat = args[0];
-		// String txt = args[1];
-
-		// There are two implmentations of search
-		// one is with String and the other is an array of chars
-
-		// String pat = "abracadabra";
-		// String txt = "abacadabrabracabracadabrabrabracad";
-		//
-		// char[] pattern = pat.toCharArray();
-		// char[] text = txt.toCharArray();
-		//
-		// KMP kmp1 = new KMP(pat);
-		// int offset1 = kmp1.search(txt);
-		//
-		// KMP kmp2 = new KMP(pattern, 256);
-		// int offset2 = kmp2.search(text);
-		//
-		// // print results
-		// StdOut.println("text: " + txt);
-		//
-		// StdOut.print("pattern: ");
-		// for (int i = 0; i < offset1; i++)
-		// StdOut.print(" ");
-		// StdOut.println(pat + " at pos " + offset1);
-		//
-		// StdOut.print("pattern: ");
-		// for (int i = 0; i < offset2; i++)
-		// StdOut.print(" ");
-		// StdOut.println(pat + " at pos " + offset2);
-	}
 }
