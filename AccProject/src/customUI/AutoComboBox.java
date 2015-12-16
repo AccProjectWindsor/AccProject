@@ -116,7 +116,11 @@ public class AutoComboBox extends PlainDocument {
 		comboBox.addItem(str);
 		for (String item : newItems) {
 			if (!item.equals(str)) {
-				comboBox.addItem(prefix + item);
+				if (prefix.split(" ").length > 1) {
+					comboBox.addItem(str.substring(0,str.lastIndexOf(" ") + 1) + item);
+				} else {
+					comboBox.addItem(item);
+				}
 			}
 		}
 	}
@@ -130,7 +134,7 @@ public class AutoComboBox extends PlainDocument {
 		if (result.length() == 0 || " ".equals(str)) {
 			return;
 		}
-		prefix = result;
+
 		// return immediately when selecting an item
 		if (selecting) {
 			return;
@@ -140,7 +144,8 @@ public class AutoComboBox extends PlainDocument {
 			String[] searchTexts = (result).split(" ");
 			updataComboItem(result, SearchTrie.prefixSearchLm(searchTexts[searchTexts.length - 1], 5));
 		}
-
+		prefix = result;
+		
 		// insert the string into the document
 
 		// lookup and select a matching item

@@ -131,6 +131,8 @@ public class MainFrame extends JFrame {
 
 	private void getSearchResult(String searchText) {
 		textArea.setText("");
+		searchText = searchText.trim();
+		searchText.replaceFirst(" ", "");
 		String[] words = searchText.split(" ");
 		List<EachPage> searchResult = PageRanking.listTop10Pages(words);
 		for (EachPage page : searchResult) {
