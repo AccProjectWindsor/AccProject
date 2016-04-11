@@ -1,6 +1,6 @@
 package com.ims.beans;
 
-public class IntershipeInfoBean {
+public class InternshipInfoBean {
 
 	private int internCode;
 	private int companyCode;

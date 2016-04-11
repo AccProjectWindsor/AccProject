@@ -27,12 +27,112 @@
 			<result name="success" type="json"></result>
 			<result name="error" type="json"></result>
 		</action>
+		
+		<action name="listEducation" class="com.ims.action.EducationAction">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<action name="listInternship" class="com.ims.action.InternshipAction">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+
+		<action name="listInternshipType" class="com.ims.action.InternshipTypeAction">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+
+		<action name="listJobGroup" class="com.ims.action.JobGroupAction">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+
+		<action name="listJob" class="com.ims.action.JobAction">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+
+		<action name="listLogin" class="com.ims.action.LoginAction">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+
+		<action name="listMainFrame" class="com.ims.action.MainFrameAction">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+
+		<action name="listSkill" class="com.ims.action.SkillAction">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+
+		<action name="listStudent" class="com.ims.action.StudentAction">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+
+		<action name="listWorkExperience" class="com.ims.action.WorkExperienceAction">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
 
 		<action name="editCompany" class="com.ims.action.CompanyEditAction">
 			<result name="success" type="json"></result>
 			<result name="error" type="json"></result>
 		</action>
 
+		<action name="editEducation" class="com.ims.action.EducationEditAction">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<action name="editInternship" class="com.ims.action.InternshipEditAction">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<action name="editInternshipType" class="com.ims.action.InternshipTypeEditAction">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<action name="editJobGroup" class="com.ims.action.JobGroupEditAction">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<action name="editJob" class="com.ims.action.JobEditAction">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<action name="editLogin" class="com.ims.action.LoginEditAction">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<action name="editMainFrame" class="com.ims.action.MainFrameEditAction">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<action name="editSkill" class="com.ims.action.SkillEditAction">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<action name="editStudent" class="com.ims.action.StudentEditAction">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<action name="editWorkExperience" class="com.ims.action.WorkExperienceEditAction">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
 		<action name="showCompany" class="com.ims.action.show.ShowCompanyAction">
 			<result name="success">/CompanyList.jsp</result>
 		</action>
