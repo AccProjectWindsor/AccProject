@@ -6,20 +6,28 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<link href="css/Login.css" rel="stylesheet" type="text/css" />
+
 <title>Login</title>
 </head>
 <body>
-	<s:form method="post" action="login">
-	<p>
-		<s:textfield name="loginBean.userName" label="User Name" />
-		<s:textfield name="loginBean.password" label="Password" />
-	</p>
+	<center>
+		<div id="divMain">
+			<div id="divLogin">
+				<s:form method="post" action="login">
 
-		<s:if test="loginBean.loginStatus == @com.ims.statics.LoginStatus@FAIL">
-			<p style="color:red;">Login Fail</p>
-		</s:if>
-
-		<s:submit />
-	</s:form>
+					<s:textfield class="loginText" name="loginBean.userName"
+						label="User Name" />
+					<s:password class="loginText" name="loginBean.password"
+						label="Password" />
+					<s:submit class="submit" scrolling="no" />
+					<s:if
+						test="loginBean.loginStatus == @com.ims.statics.LoginStatus@FAIL">
+						<div id="failInfo">Login Fail</div>
+					</s:if>
+				</s:form>
+			</div>
+		</div>
+	</center>
 </body>
 </html>

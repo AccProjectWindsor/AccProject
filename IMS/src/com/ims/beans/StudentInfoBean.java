@@ -1,7 +1,5 @@
 package com.ims.beans;
 
-import java.util.Calendar;
-
 public class StudentInfoBean {
 
 	private int stuId;
