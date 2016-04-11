@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="action" extends="struts-default, json-default">
+
+		<result-types>
+			<result-type name="json" class="org.apache.struts2.json.JSONResult"
+				default="true" />
+			<result-type name="dispatcher"
+				class="org.apache.struts2.dispatcher.ServletDispatcherResult"
+				default="true" />
+		</result-types>
+
+		<action name="login" class="com.ims.action.LoginAction">
+			<result name="error">/loginForm.jsp</result>
+			<result name="success">/MainFrame.jsp</result>
+		</action>
+
+		<action name="mainFrame" class="com.ims.action.MainFrameAction">
+			<result name="success">/MainFrame.jsp</result>
+		</action>
+
+		<action name="listCompany" class="com.ims.action.CompanyAction">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+
+		<action name="editCompany" class="com.ims.action.CompanyEditAction">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+
+		<action name="showCompany" class="com.ims.action.show.ShowCompanyAction">
+			<result name="success">/CompanyList.jsp</result>
+		</action>
+
+		<action name="listIntern" class="com.ims.action.list.ListInternAction">
+			<result name="success">/InternList.jsp</result>
+		</action>
+
+		<action name="showIntern" class="com.ims.action.show.ShowInternAction">
+			<result name="success">/EditIntern.jsp</result>
+		</action>
+
+		<action name="listStudent" class="com.ims.action.list.ListStudentAction">
+			<result name="success">/StudentList.jsp</result>
+		</action>
+
+		<action name="showStudent" class="com.ims.action.show.ShowStudentAction">
+			<result name="success">/EditStudent.jsp</result>
+		</action>
+
+		<action name="listEducation" class="com.ims.action.list.ListEducationAction">
+			<result name="success">/EducationList.jsp</result>
+		</action>
+
+		<action name="showEducation" class="com.ims.action.show.ShowEducationAction">
+			<result name="success">/EditEducation.jsp</result>
+		</action>
+
+		<action name="listJob" class="com.ims.action.list.ListJobAction">
+			<result name="success">/JobList.jsp</result>
+		</action>
+
+		<action name="showJob" class="com.ims.action.show.ShowJobAction">
+			<result name="success">/EditJob.jsp</result>
+		</action>
+
+		<action name="listJobGroup" class="com.ims.action.list.ListJobGroupAction">
+			<result name="success">/JobGroupList.jsp</result>
+		</action>
+
+		<action name="showJobGroup" class="com.ims.action.show.ShowJobGroupAction">
+			<result name="success">/EditJobGroup.jsp</result>
+		</action>
+
+		<action name="listSkill" class="com.ims.action.list.ListCompanyAction">
+			<result name="success">/CompanyList.jsp</result>
+		</action>
+
+		<action name="showSkill" class="com.ims.action.show.ShowCompanyAction">
+			<result name="success">/EditCompany.jsp</result>
+		</action>
+
+		<action name="index">
+			<result type="redirectAction">
+				<param name="actionName">LoginAction</param>
+				<param name="namespace">/ims</param>
+			</result>
+		</action>
+
+		<action name="HelloWorld" class="com.ims.action.LoginAction">
+			<result>/WEB-INF/loginForm.jsp</result>
+		</action>
+
+	</package>
+</struts>
