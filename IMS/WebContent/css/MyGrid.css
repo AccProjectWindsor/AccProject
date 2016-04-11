@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+
+.ui-widget-header {
+	heigth: 24px;
+	font-size: 18px;
+}
+
+#editmodgridtable {
+	font-size: 0.62em;
+}

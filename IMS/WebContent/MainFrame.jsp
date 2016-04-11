@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<link href="css/MainFrame.css" rel="stylesheet" type="text/css" />
+<link href="css/MainFrame.css" rel="stylesheet" type="text/css" zoom="150%"/>
 <title>Main Frame</title>
 <script type="text/javascript">
 	function setIfrmeUrl(url) {
