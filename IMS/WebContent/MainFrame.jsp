@@ -8,16 +8,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <link href="css/MainFrame.css" rel="stylesheet" type="text/css" />
 <title>Main Frame</title>
-<script type="text/javascript" >
+<script type="text/javascript">
+	function setIfrmeUrl(url) {
 
-function setIfrmeUrl(url){
-	
-	alert(url);
-	document.getElementById("subFrame").src = url;
-	
-	
-};
+		alert(url);
+		document.getElementById("subFrame").src = url;
 
+	};
 </script>
 </head>
 <body>
@@ -31,13 +28,14 @@ function setIfrmeUrl(url){
 		<div id="divItem">
 			<s:iterator value="mainFrameBean.itemList" var="map"
 				status="rowstatus">
-				<s:property value="#map.key" />
 				<s:iterator value="#map.value" var="list">
-					<ul>
+					<div class="divFunc">
+						<a class="aItem"
+							href="javascript:setIfrmeUrl('<s:url action='%{#list.url}'/>');">
+							<s:property value="#list.text" />
+						</a>
 
-						<li><a href="javascript:setIfrmeUrl('<s:url action='%{#list.url}'/>');" >
-						<s:property value="#list.text" /></a></li>
-					</ul>
+					</div>
 				</s:iterator>
 			</s:iterator>
 		</div>
