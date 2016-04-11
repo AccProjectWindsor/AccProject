@@ -1,0 +1,67 @@
+@CHARSET "UTF-8";
+
+body {
+	
+}
+
+#divMain {
+	background-image: url("../resources/MainFrame.jpg");
+	background-size: contain;
+	box-shadow: 0 0 20px 10px rgba(120, 120, 120, 0.8);
+	-webkit-transform: scale(.85);
+	transform: scale(.85);
+	width: 1920px;
+	height: 1080px;
+}
+
+#divHeader {
+	width: 1920px;
+	height: 164px;
+}
+
+#divItem {
+	width: 240px;
+	height: 720px;
+	background-color: red;
+	margin-top: 112px;
+	margin-left: 72px;
+	position: absolute;
+}
+
+#divFrames {
+	width: 1426px;
+	height: 812px;
+	margin-top: 20px;
+	margin-left: 340px;
+	position: absolute;
+}
+
+#subFrame {
+	width: 1426px;
+	height: 812px;
+	border: 0;
+}
+
+.divTitle {
+	color: #ffffff;
+	-webkit-text-stroke: 1px #0080c0;
+	font-family: "Arial";
+	font-size: 68px;
+	font-weight: bold;
+	margin-top: 36px;
+	position: absolute;
+	margin-left: 300px;
+}
+
+.label {
+	width: 240px;
+	height: 36px;
+	font-size: 32px;
+}
+
+.submit {
+	width: 246px;
+	height: 36px;
+	font-size: 24px;
+	margin-top: 48px;
+}
