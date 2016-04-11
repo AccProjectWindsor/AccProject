@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ims.beans.JobInfoBean;
+import com.ims.beans.SkillInfoBean;
 import com.opensymphony.xwork2.ActionSupport;
 
 import net.sf.json.JSONArray;
@@ -54,25 +54,23 @@ public class SkillAction extends ActionSupport {
 
 	private boolean loadonce = false;
 
-	private List<JobInfoBean> gridModel;
+	private List<SkillInfoBean> gridModel;
 
 	@Override
 	public String execute() {
 		String type = "";
-		List<JobInfoBean> JobList = new ArrayList<JobInfoBean>();
+		List<SkillInfoBean> SkillList = new ArrayList<SkillInfoBean>();
 		try {
 
 			if (filters == null || "".equals(filters)) {
-				JobList.clear();
+				SkillList.clear();
 				for (int i = 0; i < 50; i++) {
-					JobInfoBean JobGoup = new JobInfoBean();
-					JobGoup.setJobCode(i);
-					JobGoup.setJobTitle("Job " + i + " Title");
-					JobGoup.setIJobRespon("Job " + i + " Respon");
-					JobGoup.setNoPosition(i);
-					JobGoup.setJobSalary(BigDecimal.valueOf(i));
-					JobGoup.setJobGroupCode(i);
-					JobList.add(JobGoup);
+					SkillInfoBean Skill = new SkillInfoBean();
+					Skill.setSkillCode(i);
+					Skill.setSkillName("Skill " + i + " Name");
+					Skill.setISkillDesc("Skill " + i + " Desc");
+					Skill.setISkillType("Skill " + i + " Type");
+					SkillList.add(Skill);
 				}
 			} else {
 
@@ -87,45 +85,39 @@ public class SkillAction extends ActionSupport {
 					System.out.println("op :" + rule.getString("op"));
 					System.out.println("data :" + rule.getString("data"));
 				}
-				JobList.clear();
+				SkillList.clear();
 				for (int i = 7; i < 30; i++) {
 
-					JobInfoBean JobGoup = new JobInfoBean();
-					JobGoup.setJobCode(i);
-					JobGoup.setJobTitle("Job " + i + " Title");
-					JobGoup.setIJobRespon("Job " + i + " Respon");
-					JobGoup.setNoPosition(i);
-					JobGoup.setJobSalary(BigDecimal.valueOf(i));
-					JobGoup.setJobGroupCode(i);
-					JobList.add(JobGoup);
+					SkillInfoBean Skill = new SkillInfoBean();
+					Skill.setSkillCode(i);
+					Skill.setSkillName("Skill " + i + " Name");
+					Skill.setISkillDesc("Skill " + i + " Desc");
+					Skill.setISkillType("Skill " + i + " Type");
+					SkillList.add(Skill);
 				}
 			}
 
 			if (sidx != null && !sidx.equals("")) {
 				System.out.println("sort by " + sidx);
-				JobList.clear();
+				SkillList.clear();
 				if (sord.equals("desc")) {
 					for (int i = 130; i > 99; i--) {
-						JobInfoBean JobGoup = new JobInfoBean();
-						JobGoup.setJobCode(i);
-						JobGoup.setJobTitle("Job " + i + " Title");
-						JobGoup.setIJobRespon("Job " + i + " Respon");
-						JobGoup.setNoPosition(i);
-						JobGoup.setJobSalary(BigDecimal.valueOf(i));
-						JobGoup.setJobGroupCode(i);
-						JobList.add(JobGoup);
+						SkillInfoBean Skill = new SkillInfoBean();
+						Skill.setSkillCode(i);
+						Skill.setSkillName("Skill " + i + " Name");
+						Skill.setISkillDesc("Skill " + i + " Desc");
+						Skill.setISkillType("Skill " + i + " Type");
+						SkillList.add(Skill);
 					}
 				} else {
-					JobList.clear();
+					SkillList.clear();
 					for (int i = 99; i < 130; i++) {
-						JobInfoBean JobGoup = new JobInfoBean();
-						JobGoup.setJobCode(i);
-						JobGoup.setJobTitle("Job " + i + " Title");
-						JobGoup.setIJobRespon("Job " + i + " Respon");
-						JobGoup.setNoPosition(i);
-						JobGoup.setJobSalary(BigDecimal.valueOf(i));
-						JobGoup.setJobGroupCode(i);
-						JobList.add(JobGoup);
+						SkillInfoBean Skill = new SkillInfoBean();
+						Skill.setSkillCode(i);
+						Skill.setSkillName("Skill " + i + " Name");
+						Skill.setISkillDesc("Skill " + i + " Desc");
+						Skill.setISkillType("Skill " + i + " Type");
+						SkillList.add(Skill);
 					}
 				}
 			}
@@ -134,15 +126,15 @@ public class SkillAction extends ActionSupport {
 			int from = to - rows;
 
 			// Count Rows (select count(*) from custumer)
-			records = JobList.size();
+			records = SkillList.size();
 
 			// calculate the total pages for the query
 			total = (int) Math.ceil((double) records / (double) rows);
 
 			if (to > records) {
-				setGridModel(JobList.subList(from, records));
+				setGridModel(SkillList.subList(from, records));
 			} else {
-				setGridModel(JobList.subList(from, to));
+				setGridModel(SkillList.subList(from, to));
 			}
 
 			System.out.println("execute");
@@ -246,11 +238,11 @@ public class SkillAction extends ActionSupport {
 		this.loadonce = loadonce;
 	}
 
-	public List<JobInfoBean> getGridModel() {
+	public List<SkillInfoBean> getGridModel() {
 		return gridModel;
 	}
 
-	public void setGridModel(List<JobInfoBean> gridModel) {
+	public void setGridModel(List<SkillInfoBean> gridModel) {
 		this.gridModel = gridModel;
 	}
 
